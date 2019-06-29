@@ -31,3 +31,9 @@ fanyi(text).then(res => {
   const res = await Youdao.fanyi(text);
   assert.equal(res.translation[0], '你好，世界');
 })();
+
+fanyi(text, { only: 'dict' }, (err, res) => {
+  assert.ok(res.web);
+  assert.ok(res.basic);
+  assert.equal(res.translation, undefined);
+});

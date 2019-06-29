@@ -21,8 +21,14 @@ const parseURL = (url, query) => {
     o.searchParams.append(k, query[k]));
   return o;
 }
+
 const ERROR_CODES = {
-  // 1: 'some error'
+  // 0: '正常',
+  20: "要翻译的文本过长",
+  30: "无法进行有效的翻译",
+  40: "不支持的语言类型",
+  50: "无效的key",
+  60: "无词典结果，仅在获取词典结果生效",
 };
 
 const parseJSON = buf => {
@@ -42,10 +48,15 @@ const parseJSON = buf => {
   return data;
 };
 
+/**
+ * Youdao Translate API
+ * @docs http://fanyi.youdao.com/openapi?path=data-mode
+ * @param {*} options 
+ */
 function Youdao(options) {
-  if(typeof options === 'string')
+  if (typeof options === 'string')
     return Youdao.fanyi.apply(this, arguments);
-  if(typeof options !== 'object')
+  if (typeof options !== 'object')
     options = {};
   const {
     key, keyfrom,
@@ -55,7 +66,7 @@ function Youdao(options) {
   assert(key, 'key is required');
   assert(keyfrom, 'keyform is required');
   function fanyi(q = '', query, cb) {
-    if(typeof query === 'function'){
+    if (typeof query === 'function') {
       cb = query;
       query = {};
     }
@@ -74,7 +85,7 @@ function Youdao(options) {
       .then(parseJSON)
       .then(res => (cb && cb(null, res), res))
       .catch(err => {
-        if(cb) cb(err)
+        if (cb) cb(err)
         else throw err;
       });
   }
