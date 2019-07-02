@@ -1,0 +1,31 @@
+{
+  "name": "youdao-fanyi",
+  "version": "2.0.0",
+  "description": "Simple API for Youdao Translate in JavaScript",
+  "main": "index.js",
+  "bin": {
+    "youdao-fanyi": "./bin/fanyi.js"
+  },
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/song940/youdao-fanyi.git"
+  },
+  "keywords": [
+    "youdao",
+    "fanyi",
+    "translate"
+  ],
+  "author": "Lsong <hi@lsong.org> (https://lsong.org)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/song940/youdao-fanyi/issues"
+  },
+  "homepage": "https://github.com/song940/youdao-fanyi",
+  "directories": {
+    "example": "example",
+    "test": "test"
+  }
+}
