@@ -6,10 +6,15 @@
 
 [![NPM](https://nodei.co/npm/youdao-fanyi.png?downloads=true&stars=true)](https://nodei.co/npm/youdao-fanyi/)
 
+
+有道翻译 API 平台已经全面升级，请前往新平台[有道智云](https://ai.youdao.com/?keyfrom=old-openapi)申请及后续使用。
+
+原有的接口仍可以继续使用，对应的 SDK 也会在 1.x 版本继续维护，新版本将在 [next 分支](https://github.com/song940/youdao-fanyi/tree/next) 更新。
+
 ## Installation
 
 ```bash
-~$ [sudo] npm install youdao-fanyi [-g] [--save]
+~$ [sudo] npm install youdao-fanyi@1 [-g] [--save]
 ```
 ## Usage
 
